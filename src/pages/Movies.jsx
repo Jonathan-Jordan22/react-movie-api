@@ -37,7 +37,7 @@ const Movies = () => {
     }
     setLoading(true);
     const { data } = await axios.get(
-      `http://www.omdbapi.com/?apikey=d58ad39d&s=${query}`
+      `https://www.omdbapi.com/?apikey=d58ad39d&s=${query}`
     );
     setMovies(data.Search || []);
     setLoading(false);
