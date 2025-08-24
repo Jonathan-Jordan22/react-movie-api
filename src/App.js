@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+// d58ad39d
+// http://www.omdbapi.com/?apikey=d58ad39d&
+// http://img.omdbapi.com/?apikey=d58ad39d&
+
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import Home from './pages/Home';
+import Movies from './pages/Movies';
+import Movie from './pages/Movie';
+
 
 function App() {
   return (
+    <Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/movies" element={<Movies />}></Route>
+        <Route path="/movies/:id" element={<Movie />}></Route>
+      </Routes>
     </div>
+    </Router>
   );
 }
 
